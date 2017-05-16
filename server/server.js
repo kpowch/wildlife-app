@@ -1,17 +1,16 @@
-// NOTE: these are all imported the 'new' ES6 way, using import instead of require
+// NOTE: `import` is the new ES6 way (instead of `require`)
 import express from 'express'
 const app = express()
 
-console.log('something so it prints')
-console.log('hallo')
+const PORT = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
   res.send(200)
 })
 
-app.listen(3000, (err) => {
+app.listen(PORT, (err) => {
   if (err) {
-    process.exit(1) // this will quit and thow and error
+    process.exit(1) // this will quit and thow an error
   }
-  console.log('App listening on port 3000!')
+  console.log(`App server listening on port ${PORT}!`)
 })
