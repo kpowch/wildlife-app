@@ -23,7 +23,8 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       'app-root': path.resolve(__dirname, 'src', 'js'),
-      'app-routes': path.resolve(__dirname, 'src', 'js', 'routes')
+      'app-routes': path.resolve(__dirname, 'src', 'js', 'routes'),
+      'app-styles': path.resolve(__dirname, 'src', 'js', 'styles')
       // 'app-components': path.resolve(__dirname, 'src', 'js', 'components'),
       // 'app-assets': path.resolve(__dirname, 'src', 'assets')
     }
@@ -40,13 +41,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css!postcss-loader'
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.scss$/,
         loaders: [
           'style-loader',
-          'css-loader?sourcemap&importloaders=1&localidentname=[name]__[local]___[hash:base64:5]!sass'
+          'css-loader?sourcemap&importloaders=1&localidentname=[name]__[local]___[hash:base64:5]!sass-loader'
         ]
       }
     ]
