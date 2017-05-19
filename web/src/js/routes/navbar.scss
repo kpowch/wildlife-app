@@ -1,0 +1,126 @@
+// ~ required so webpack knows to look into aliases
+@import '~app-styles/variables';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 9000;
+  width: 100%;
+  height: $navbar-height;
+  background: $navbar-background-color;
+
+  .navbar-wrapper {
+    max-width: $max-content-width;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    /* clear fix */
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+
+  .navbar-content-left {
+    float: left;
+    height: 100%;
+  }
+  .navbar-content-right {
+    float: right;
+    height: 100%;
+  }
+
+  .navbar-logo {
+  	font-size: $navbar-font-size-logo;
+  	line-height: $navbar-height;
+  	font-family: $logo-font-family;
+  	text-decoration: none;
+  }
+
+  ul {
+  	list-style-type: none;
+  	margin: 0;
+  	padding: 0;
+  }
+
+  .navbar-item {
+  	display: inline-block;
+    background: $navbar-background-color-item;
+    margin: 0 2px;
+    vertical-align: top; // ensures menu items stay at top of page
+    height: 100%;
+  }
+
+  .navbar-link {
+  	display: block;
+  	min-width: 200px;
+  	text-align: center;
+  	line-height: $navbar-height;
+  	font-family: $default-font-family;
+    font-size: $navbar-font-size;
+  	color: $navbar-font-color;
+  	text-decoration: none;
+
+    &:hover {
+      background: $navbar-background-color-hover;
+      color: $navbar-font-color-hover;
+    }
+  }
+
+  .navbar-dropdown-item {
+    display: block;
+    background: $navbar-background-color-dropdown;
+  }
+
+  .navbar-dropdown-items {
+  	display: none; // hide dropdown links by default
+  }
+
+  /* show dropdown links on hover */
+  .navbar-link:hover + .navbar-dropdown-items, .navbar-dropdown-items:hover {
+  	display: block;
+  }
+
+  .show-menu {
+  	font-family: $default-font-family;
+  	text-decoration: none;
+  	color: $navbar-font-color;
+  	background: $navbar-background-color;
+  	text-align: center;
+  	padding: 10px 0;
+  	display: none; // hide responsive menu by default
+  }
+
+  /* hide checkbox */
+  input[type='checkbox'] {
+   display: none;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 800px) {
+  	.show-menu {
+    	display: block;
+    }
+
+    #navbar-items {
+      display: none;
+      &.open {
+        display: block;
+      }
+    }
+
+    .navbar-content-left, .navbar-content-right {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+
+  	.navbar-item {
+  		margin-bottom: 2px;
+      display: block;
+      width: 100%;
+  	}
+  }
+}
