@@ -1,0 +1,14 @@
+$max-content-width: 1200px;
+$default-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$logo-font-family: $default-font-family;
+
+// Navbar variables
+$navbar-font-size: 16px;
+$navbar-font-size-logo: 30px;
+$navbar-height: $navbar-font-size-logo + 20;
+$navbar-font-color: black;
+$navbar-font-color-hover: #FFF;
+$navbar-background-color: lightgrey;
+$navbar-background-color-item: darkgrey;
+$navbar-background-color-dropdown: #f3f3f3;
+$navbar-background-color-hover: #19c589;
