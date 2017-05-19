@@ -1,3 +1,4 @@
+import 'normalize.css/normalize.css'
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Reactdom from 'react-dom'
