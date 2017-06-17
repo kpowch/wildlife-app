@@ -1,6 +1,6 @@
 // LIBRARIES
 import React from 'react'
-import { Route } from 'react-router'
+import { Route } from 'react-router-dom'
 
 // MY THANGS
 import Navbar from 'app-routes/navbar'

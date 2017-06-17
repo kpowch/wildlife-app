@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import classnames from 'classnames'
 import './navbar.scss'
 
@@ -25,7 +26,7 @@ class Navbar extends React.Component {
       <nav className='navbar'>
         <div className='navbar-wrapper'>
           <div className='navbar-content-left'>
-            <div><a className='navbar-logo'href='/'>WildLife App</a></div>
+            <div><Link className='navbar-logo' to='/'>WildLife App</Link></div>
           </div>
 
           <div className='navbar-content-right'>
@@ -36,31 +37,31 @@ class Navbar extends React.Component {
 
             <ul id='navbar-items' className={menuclass}>
               <li className='navbar-item'>
-                <a className='navbar-link' href='#'>Sighting Dashboard <i className='fa fa-angle-down' /></a>
+                <Link className='navbar-link' to='/sightings'>Sightings Dashboard <i className='fa fa-angle-down' /></Link>
                 <ul className='navbar-dropdown-items'>
                   <li className='navbar-dropdown-item'>
-                    <a className='navbar-link' href='#'>Add Sighting Entry</a>
+                    <Link className='navbar-link' to='/sightings/add'>Add Sightings</Link>
                   </li>
                   <li className='navbar-dropdown-item'>
-                    <a className='navbar-link' href='#'>View Sightings</a>
+                    <Link className='navbar-link' to='/sightings/edit'>Edit Sightings</Link>
                   </li>
                 </ul>
               </li>
 
               <li className='navbar-item'>
-                <a className='navbar-link' href='/about'>Team <i className='fa fa-angle-down' /></a>
+                <Link className='navbar-link' to='/who-we-are'>Team <i className='fa fa-angle-down' /></Link>
                 <ul className='navbar-dropdown-items'>
                   <li className='navbar-dropdown-item'>
-                    <a className='navbar-link' href='#'>Who We Are</a>
+                    <Link className='navbar-link' to='/who-we-are'>Who We Are</Link>
                   </li>
                   <li className='navbar-dropdown-item'>
-                    <a className='navbar-link' href='#'>Contact</a>
+                    <Link className='navbar-link' to='/contact'>Contact</Link>
                   </li>
                 </ul>
               </li>
 
               <li className='navbar-item'>
-                <a className='navbar-link' href='#'>Sign Out</a>
+                <Link className='navbar-link' to='/signout'>Sign Out</Link>
               </li>
             </ul>
 

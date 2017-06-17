@@ -3,7 +3,9 @@ import React from 'react'
 class Login extends React.Component {
   render () {
     return (
-      <div>login herrr</div>
+      <div className='login'>
+        <h1>login herrr</h1>
+      </div>
     )
   }
 }
