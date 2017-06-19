@@ -1,18 +1,35 @@
 $max-content-width: 1200px;
 $default-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$default-line-height: 30px;
 $logo-font-family: $default-font-family;
 
 // Navbar variables
-$navbar-font-size: 16px;
+$navbar-font-family: $default-font-family;
+$navbar-line-height: $default-line-height;
+$navbar-font-size: 14px;
 $navbar-font-size-logo: 30px;
 $navbar-height: $navbar-font-size-logo + 20;
+$navbar-height-large: 136px;
+$navbar-element-width: 14.28vw;
+$navbar-element-max-width: calc(#{$max-content-width} / 7);
 $navbar-font-color: black;
-$navbar-font-color-hover: #FFF;
-$navbar-background-color: lightgrey;
-$navbar-background-color-item: darkgrey;
-$navbar-background-color-dropdown: #f3f3f3;
-$navbar-background-color-hover: #19c589;
+$navbar-font-color-hover: lightseagreen;
+$navbar-background-color: #FFF;
+$navbar-background-color-dropdown: #FFF;
+$navbar-responsive: 800px;
 
 .Application {
   margin-top: $navbar-height;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }

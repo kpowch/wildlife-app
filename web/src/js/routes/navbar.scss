@@ -6,14 +6,19 @@
   top: 0;
   z-index: 9000;
   width: 100%;
-  height: $navbar-height;
+  height: $navbar-height-large;
+  height: 150px;
   background: $navbar-background-color;
 
-  .navbar-wrapper {
+  .navbar-wrapper-wrapper {
     max-width: $max-content-width;
-    height: 100%;
     margin: 0 auto;
-    padding: 0;
+  }
+
+  .navbar-wrapper {
+    height: 100%;
+    margin: 0 -10px;
+    padding: 0 10px;
 
     /* clear fix */
     &::after {
@@ -23,20 +28,33 @@
     }
   }
 
-  .navbar-content-left {
-    float: left;
-    height: 100%;
+  .navbar-logo-wrapper.navbar-logo-wrapper-mobile {
+    display: none;
+
+    @media (max-width: #{$navbar-responsive}) {
+      display: block;
+      img {
+        width: 100px;
+      }
+    }
   }
-  .navbar-content-right {
-    float: right;
-    height: 100%;
+
+  .navbar-logo-wrapper.navbar-logo-wrapper-browser {
+    display: block;
+    float: left;
+    border: none;
+    img {
+      width: $navbar-element-width;
+      max-width: $navbar-element-max-width;
+    }
+
+    @media (max-width: #{$navbar-responsive}) {
+      display: none;
+    }
   }
 
   .navbar-logo {
-  	font-size: $navbar-font-size-logo;
-  	line-height: $navbar-height;
-  	font-family: $logo-font-family;
-  	text-decoration: none;
+    display: block;
   }
 
   ul {
@@ -46,40 +64,60 @@
   }
 
   .navbar-item {
+    box-sizing: border-box;
   	display: inline-block;
-    background: $navbar-background-color-item;
-    margin: 0 2px;
-    vertical-align: top; // ensures menu items stay at top of page
-    height: 100%;
-  }
+    float: left;
+    margin-top: 50px;
+    width: $navbar-element-width;
+    max-width: $navbar-element-max-width;
 
-  .navbar-link {
-  	display: block;
-  	min-width: 200px;
-  	text-align: center;
-  	line-height: $navbar-height;
-  	font-family: $default-font-family;
-    font-size: $navbar-font-size;
-  	color: $navbar-font-color;
-  	text-decoration: none;
-
-    &:hover {
-      background: $navbar-background-color-hover;
-      color: $navbar-font-color-hover;
+    @media (max-width: #{$navbar-responsive}) {
+      display: block;
+      float: none;
+      text-align: center;
+      margin: 5px auto;
+      width: 100%;
+      max-width: 100%;
     }
   }
 
-  .navbar-dropdown-item {
-    display: block;
-    background: $navbar-background-color-dropdown;
-  }
-
-  .navbar-dropdown-items {
+  .navbar-items-dropdown {
   	display: none; // hide dropdown links by default
   }
 
+  .navbar-item-dropdown {
+    display: block;
+    background: $navbar-background-color-dropdown;
+    padding-top: 10px;
+  }
+
+  .navbar-link {
+    font-family: $navbar-font-family;
+    line-height: $navbar-line-height;
+    font-size: $navbar-font-size;
+    color: $navbar-font-color;
+    border-bottom: 1px solid $navbar-font-color;
+  	display: block;
+    margin: 0 10px;
+    text-transform: uppercase;
+  	text-decoration: none;
+
+    &:hover {
+      color: $navbar-font-color-hover;
+      border-bottom: 1px solid $navbar-font-color-hover;
+    }
+  }
+
+  .navbar-link-dropdown {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
   /* show dropdown links on hover */
-  .navbar-link:hover + .navbar-dropdown-items, .navbar-dropdown-items:hover {
+  .navbar-link:hover + .navbar-items-dropdown, .navbar-items-dropdown:hover {
   	display: block;
   }
 
@@ -91,6 +129,10 @@
   	text-align: center;
   	padding: 10px 0;
   	display: none; // hide responsive menu by default
+
+    @media (max-width: #{$navbar-responsive}) {
+    	display: block;
+    }
   }
 
   /* hide checkbox */
@@ -98,29 +140,13 @@
    display: none;
   }
 
-  /* Responsive Styles */
-  @media (max-width: 800px) {
-  	.show-menu {
-    	display: block;
-    }
-
-    #navbar-items {
+  #navbar-items {
+    /* show nav items */
+    @media (max-width: #{$navbar-responsive}) {
       display: none;
       &.open {
         display: block;
       }
     }
-
-    .navbar-content-left, .navbar-content-right {
-      float: none;
-      width: 100%;
-      text-align: center;
-    }
-
-  	.navbar-item {
-  		margin-bottom: 2px;
-      display: block;
-      width: 100%;
-  	}
   }
 }
