@@ -24,7 +24,8 @@ module.exports = {
     alias: {
       'app-root': path.resolve(__dirname, 'src', 'js'),
       'app-routes': path.resolve(__dirname, 'src', 'js', 'routes'),
-      'app-styles': path.resolve(__dirname, 'src', 'js', 'styles')
+      'app-styles': path.resolve(__dirname, 'src', 'js', 'styles'),
+      'app-images': path.resolve(__dirname, 'src', 'js', 'images')
       // 'app-components': path.resolve(__dirname, 'src', 'js', 'components'),
       // 'app-assets': path.resolve(__dirname, 'src', 'assets')
     }

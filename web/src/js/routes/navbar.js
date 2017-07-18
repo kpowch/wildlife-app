@@ -28,7 +28,7 @@ class Navbar extends React.Component {
           <div className='navbar-wrapper'>
             <div className='navbar-logo-wrapper navbar-logo-wrapper-mobile'>
               <div><Link className='navbar-logo text-center' to='/'>
-                <img src='http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png' /></Link>
+                <img src='src/js/images/logo.png' /></Link>
               </div>
 
               <label className='show-menu'>
@@ -50,7 +50,7 @@ class Navbar extends React.Component {
 
               <div className='navbar-logo-wrapper navbar-logo-wrapper-browser'>
                 <div><Link className='navbar-logo text-center' to='/'>
-                  <img src='http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder-300x300.png' /></Link>
+                  <img src='src/js/images/logo.png' /></Link>
                 </div>
               </div>
 
