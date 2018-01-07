@@ -1,0 +1,6 @@
+// ~ required so webpack knows to look into aliases
+@import '~app-styles/variables';
+
+body {
+  margin-top: $navbar-height-large + 10px;
+}

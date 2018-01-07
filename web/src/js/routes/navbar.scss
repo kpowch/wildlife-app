@@ -1,5 +1,4 @@
-// ~ required so webpack knows to look into aliases
-@import '~app-styles/variables';
+@import '~app-styles/main';
 
 .navbar {
   position: fixed;
@@ -42,9 +41,10 @@
     display: block;
     float: left;
     border: none;
+    width: $navbar-element-width;
     img {
-      width: $navbar-element-width;
       max-width: $navbar-element-max-width;
+      max-height: $navbar-height-large;
     }
 
     @media (max-width: #{$navbar-responsive}) {
